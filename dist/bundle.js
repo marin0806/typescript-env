@@ -20,13 +20,23 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nclas
 
 /***/ }),
 
+/***/ "./src/generics/basic.ts":
+/*!*******************************!*\
+  !*** ./src/generics/basic.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nfunction genericsBasicSample() {\n    // ジェネリック型使わない場合\n    const stringReduce = (array, initialValue) => {\n        let result = initialValue;\n        for (let i = 0; i < array.length; i++) {\n            result += array[i];\n        }\n        return result;\n    };\n    console.log(\"Generics basic sample 1:\", stringReduce([\"May\", \"the\", \"force\", \"with\", \"you\"], \"\"));\n    const numberReduce = (array, initialValue) => {\n        let result = initialValue;\n        for (let i = 0; i < array.length; i++) {\n            result += array[i];\n        }\n        return result;\n    };\n    console.log(\"Generics basic sample 2:\", numberReduce([100, 200, 300,], 1000));\n    const genericStringReduce = (array, initialValue) => {\n        let result = initialValue;\n        for (let i = 0; i < array.length; i++) {\n            result += array[i];\n        }\n        return result;\n    };\n    console.log(\"Generics basic sample 3:\", genericStringReduce([\"MAKE\", \"TYPESCRIPT\", \"GREAT\", \"AGAIN\"], \"\"));\n    const genericNumberReduce = (array, initialValue) => {\n        let result = initialValue;\n        for (let i = 0; i < array.length; i++) {\n            result += array[i];\n        }\n        return result;\n    };\n    console.log(\"Generics basic sample 4:\", genericNumberReduce([-100, -200, -300], 1000));\n}\nexports[\"default\"] = genericsBasicSample;\n\n\n//# sourceURL=webpack://typescript-env/./src/generics/basic.ts?");
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst saySomething_1 = __importDefault(__webpack_require__(/*! ../saySomething */ \"./saySomething.ts\")); //インスタンス\nconst root = document.getElementById(\"root\");\n// インスタンス化\nconst saySomething = new saySomething_1.default(\"Hello Typescript\");\nsaySomething.sayText(root);\n\n\n//# sourceURL=webpack://typescript-env/./src/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst saySomething_1 = __importDefault(__webpack_require__(/*! ../saySomething */ \"./saySomething.ts\")); //インスタンス\nconst basic_1 = __importDefault(__webpack_require__(/*! ./generics/basic */ \"./src/generics/basic.ts\"));\nconst root = document.getElementById(\"root\");\n// インスタンス化\nconst saySomething = new saySomething_1.default(\"Hello Typescript\");\nsaySomething.sayText(root);\n(0, basic_1.default)();\n\n\n//# sourceURL=webpack://typescript-env/./src/index.ts?");
 
 /***/ })
 
